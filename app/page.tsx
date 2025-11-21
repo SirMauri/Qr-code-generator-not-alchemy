@@ -1,71 +1,72 @@
 import { QRGenerator } from '@/components/QRGenerator';
 import { OliveBranch } from '@/components/OliveBranch';
+import { CollaborationCredit } from '@/components/CollaborationCredit';
+import { AnimatedSection, AnimatedOliveBranch } from '@/components/AnimatedSection';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[hsl(var(--background))] relative overflow-hidden">
       {/* Decorative Olive Branches */}
-      <OliveBranch
+      <AnimatedOliveBranch
+        delay={0.2}
         className="absolute top-12 left-8 hidden lg:block"
         style={{ transform: 'rotate(-15deg)' }}
-      />
-      <OliveBranch
+      >
+        <OliveBranch />
+      </AnimatedOliveBranch>
+      <AnimatedOliveBranch
+        delay={0.3}
         className="absolute top-32 right-12 hidden lg:block"
         style={{ transform: 'rotate(25deg) scaleX(-1)' }}
-      />
-      <OliveBranch
+      >
+        <OliveBranch />
+      </AnimatedOliveBranch>
+      <AnimatedOliveBranch
+        delay={0.4}
         className="absolute bottom-24 left-16 hidden lg:block"
         style={{ transform: 'rotate(45deg)' }}
-      />
+      >
+        <OliveBranch />
+      </AnimatedOliveBranch>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10">
         {/* Header Section */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20 space-y-6">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[hsl(var(--foreground))] leading-tight">
+        <AnimatedSection delay={0.1} className="max-w-3xl mx-auto text-center mb-8 md:mb-12 space-y-3">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(var(--foreground))] leading-tight">
             Free QR Code Generator
           </h1>
 
-          <div className="w-24 h-1 bg-[hsl(var(--accent))] mx-auto rounded-full" />
+          <div className="w-20 h-0.5 bg-[hsl(var(--accent))] mx-auto rounded-full" />
 
-          <div className="max-w-2xl mx-auto space-y-4">
-            <p className="text-lg md:text-xl text-[hsl(var(--foreground))] leading-relaxed opacity-90">
+          <div className="max-w-2xl mx-auto space-y-2">
+            <p className="text-base md:text-lg text-[hsl(var(--foreground))] leading-relaxed opacity-90">
               Generate beautiful, customizable QR codes without any paywalls or limitations.
             </p>
 
-            <p className="text-base md:text-lg text-[hsl(var(--foreground))] leading-relaxed opacity-75">
+            <p className="text-sm md:text-base text-[hsl(var(--foreground))] leading-relaxed opacity-75">
               Most QR code generators charge for basic features or watermark your codes.
               This tool is completely free because access to simple utilities should be universal.
               Customize colors, choose your format, and download instantly.
             </p>
           </div>
-        </div>
+        </AnimatedSection>
 
         {/* QR Generator Component */}
-        <QRGenerator />
+        <AnimatedSection delay={0.3}>
+          <QRGenerator />
+        </AnimatedSection>
 
         {/* Footer Note */}
-        <div className="max-w-2xl mx-auto text-center mt-16 md:mt-20">
-          <p className="text-sm text-[hsl(var(--foreground))] opacity-60 leading-relaxed">
+        <AnimatedSection delay={0.5} className="max-w-2xl mx-auto text-center mt-8 md:mt-12">
+          <p className="text-xs md:text-sm text-[hsl(var(--foreground))] opacity-60 leading-relaxed">
             Open source and ad-free. Built with care for everyone who needs a simple, reliable QR code generator.
           </p>
-        </div>
+        </AnimatedSection>
       </main>
 
-      {/* Collaboration Banner */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <div className="bg-[hsl(var(--background))] border-2 border-[hsl(var(--primary))] rounded-lg px-4 py-3 shadow-lg">
-          <p className="text-xs text-[hsl(var(--foreground))] opacity-75 text-center leading-relaxed">
-            created in collaboration
-          </p>
-          <p className="text-sm font-semibold text-[hsl(var(--primary))] text-center">
-            not-alchemy
-          </p>
-          <p className="text-xs text-[hsl(var(--foreground))] opacity-75 text-center">
-            with <span className="font-medium text-[hsl(var(--accent))]">claude code</span>
-          </p>
-        </div>
-      </div>
+      {/* Collaboration Credit */}
+      <CollaborationCredit />
     </div>
   );
 }
