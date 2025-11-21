@@ -51,6 +51,21 @@ export default function Home() {
           </p>
         </div>
       </main>
+
+      {/* Collaboration Banner */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <div className="bg-[hsl(var(--background))] border-2 border-[hsl(var(--primary))] rounded-lg px-4 py-3 shadow-lg">
+          <p className="text-xs text-[hsl(var(--foreground))] opacity-75 text-center leading-relaxed">
+            created in collaboration
+          </p>
+          <p className="text-sm font-semibold text-[hsl(var(--primary))] text-center">
+            not-alchemy
+          </p>
+          <p className="text-xs text-[hsl(var(--foreground))] opacity-75 text-center">
+            with <span className="font-medium text-[hsl(var(--accent))]">claude code</span>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
