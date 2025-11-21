@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Free QR Code Generator
+
+A beautiful, fully-featured QR code generator with no paywalls or limitations. Built with Next.js 16, TypeScript, and Tailwind CSS, following the Not Alchemy design system.
+
+## Features
+
+- **Completely Free**: No paywalls, no watermarks, no limitations
+- **Customizable Colors**: Choose custom foreground and background colors
+- **Multiple Formats**: Download as PNG or SVG
+- **Responsive Design**: Works beautifully on all devices
+- **Editorial Aesthetic**: Warm, organic design inspired by Not Alchemy
+- **Client-Side Generation**: All processing happens in your browser
+- **Instant Download**: Generate and download QR codes immediately
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS with custom design system
+- **QR Generation**: qrcode library
+- **Icons**: Lucide React
 
 ## Getting Started
 
-First, run the development server:
+### Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Create production build
+npm run build
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Start production server
+npm start
+```
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy is using [Vercel](https://vercel.com):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+1. Push your code to GitHub
+2. Import the project on Vercel
+3. Deploy!
+
+## Design System
+
+This project uses the **Not Alchemy design system**:
+
+- **Colors**: Warm cream background (#F7F7F0), deep navy text (#0A0720), deep green primary (#284023), warm brown accent (#B9896C)
+- **Typography**: System sans-serif with relaxed line heights
+- **Spacing**: Container-based layout with generous whitespace
+- **Motion**: Subtle, accessible animations
+
+## Why This Exists
+
+Most QR code generators charge for basic features or add watermarks to your codes. This tool exists because access to simple utilities should be universal and free.
+
+## License
+
+MIT - Free to use for any purpose
