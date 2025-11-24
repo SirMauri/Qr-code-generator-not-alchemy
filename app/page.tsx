@@ -41,6 +41,18 @@ export default function Home() {
             Free QR Code Generator
           </h1>
 
+          <p className="text-xs sm:text-sm text-[hsl(var(--foreground))] opacity-60 px-2">
+            made with love from{' '}
+            <a
+              href="https://not-alchemy.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[hsl(var(--primary))] hover:text-[hsl(var(--accent))] transition-colors underline decoration-dotted underline-offset-2"
+            >
+              not-alchemy.com
+            </a>
+          </p>
+
           <div className="w-16 sm:w-20 h-0.5 bg-[hsl(var(--accent))] mx-auto rounded-full" />
 
           <div className="max-w-2xl mx-auto space-y-2 px-2">
