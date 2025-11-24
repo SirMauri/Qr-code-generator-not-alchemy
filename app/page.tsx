@@ -2,6 +2,10 @@ import { QRGenerator } from '@/components/QRGenerator';
 import { OliveBranch } from '@/components/OliveBranch';
 import { CollaborationCredit } from '@/components/CollaborationCredit';
 import { AnimatedSection, AnimatedOliveBranch } from '@/components/AnimatedSection';
+import { TrustSignals } from '@/components/TrustSignals';
+import { HowItWorks } from '@/components/HowItWorks';
+import { UseCases } from '@/components/UseCases';
+import { FAQSection } from '@/components/FAQSection';
 
 export default function Home() {
   return (
@@ -57,8 +61,28 @@ export default function Home() {
           <QRGenerator />
         </AnimatedSection>
 
+        {/* Trust Signals */}
+        <AnimatedSection delay={0.4}>
+          <TrustSignals />
+        </AnimatedSection>
+
+        {/* How It Works Section */}
+        <AnimatedSection delay={0.5}>
+          <HowItWorks />
+        </AnimatedSection>
+
+        {/* Use Cases Section */}
+        <AnimatedSection delay={0.6}>
+          <UseCases />
+        </AnimatedSection>
+
+        {/* FAQ Section */}
+        <AnimatedSection delay={0.7}>
+          <FAQSection />
+        </AnimatedSection>
+
         {/* Footer Note */}
-        <AnimatedSection delay={0.5} className="max-w-2xl mx-auto text-center mt-6 sm:mt-8 md:mt-12 px-2 pb-20 sm:pb-4">
+        <AnimatedSection delay={0.8} className="max-w-2xl mx-auto text-center mt-6 sm:mt-8 md:mt-12 px-2 pb-20 sm:pb-4">
           <p className="text-xs sm:text-sm text-[hsl(var(--foreground))] opacity-60 leading-relaxed">
             Open source and ad-free. Built with care for everyone who needs a simple, reliable QR code generator.
           </p>

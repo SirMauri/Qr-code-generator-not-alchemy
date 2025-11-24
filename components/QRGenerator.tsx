@@ -5,6 +5,13 @@ import QRCode from 'qrcode';
 import { Download, Sparkles, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
+import {
+  trackQRGeneration,
+  trackQRDownload,
+  trackFormatChange,
+  trackColorChange,
+  trackGenerationError,
+} from '@/lib/analytics';
 
 type QRStyle = 'square' | 'rounded' | 'dots';
 type QRFormat = 'png' | 'svg' | 'jpg';
@@ -75,8 +82,16 @@ export const QRGenerator: React.FC = () => {
       if (window.innerWidth < 768) {
         setShowScrollIndicator(true);
       }
+
+      // Track successful QR generation
+      const hasCustomColors = fgColor !== '#284023' || bgColor !== '#F7F7F0';
+      formats.forEach((format) => {
+        trackQRGeneration(format, hasCustomColors);
+      });
     } catch (error) {
       console.error('Error generating QR code:', error);
+      // Track generation error
+      trackGenerationError(error instanceof Error ? error.message : 'Unknown error');
     } finally {
       setIsGenerating(false);
     }
@@ -84,6 +99,9 @@ export const QRGenerator: React.FC = () => {
 
   const downloadQR = (format: QRFormat) => {
     const fileName = `qr-code-${Date.now()}`;
+
+    // Track download
+    trackQRDownload(format);
 
     if (format === 'png' && qrDataURL) {
       const link = document.createElement('a');
@@ -107,11 +125,16 @@ export const QRGenerator: React.FC = () => {
   };
 
   const toggleFormat = (format: QRFormat) => {
-    setFormats(prev =>
-      prev.includes(format)
-        ? prev.filter(f => f !== format)
-        : [...prev, format]
-    );
+    const newFormats = formats.includes(format)
+      ? formats.filter(f => f !== format)
+      : [...formats, format];
+
+    setFormats(newFormats);
+
+    // Track format selection change (only if it's being added)
+    if (!formats.includes(format)) {
+      trackFormatChange(format);
+    }
   };
 
   const hasGeneratedQR = qrDataURL || qrSVG || qrJPG;
@@ -166,7 +189,10 @@ export const QRGenerator: React.FC = () => {
                     id="fgColor"
                     type="color"
                     value={fgColor}
-                    onChange={(e) => setFgColor(e.target.value)}
+                    onChange={(e) => {
+                      setFgColor(e.target.value);
+                      trackColorChange('foreground');
+                    }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 17 }}
@@ -192,7 +218,10 @@ export const QRGenerator: React.FC = () => {
                     id="bgColor"
                     type="color"
                     value={bgColor}
-                    onChange={(e) => setBgColor(e.target.value)}
+                    onChange={(e) => {
+                      setBgColor(e.target.value);
+                      trackColorChange('background');
+                    }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 17 }}
