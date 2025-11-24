@@ -9,12 +9,12 @@ export function CollaborationCredit() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.5 }}
-      className="fixed bottom-4 right-4 z-50"
+      className="fixed bottom-3 sm:bottom-4 right-3 sm:right-4 z-50 max-w-[calc(100vw-1.5rem)] sm:max-w-none"
     >
       <motion.div
         whileHover={{ scale: 1.05 }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-        className="flex items-center gap-1 text-xs"
+        className="flex flex-wrap items-center gap-1 text-[10px] sm:text-xs bg-white/90 backdrop-blur-sm px-2.5 py-1.5 rounded-lg shadow-sm border border-[hsl(var(--border))]/30"
       >
         {/* "Made with love" text */}
         <motion.span
