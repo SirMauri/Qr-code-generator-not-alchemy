@@ -39,12 +39,12 @@ export function CollaborationCredit() {
           ❤️
         </motion.span>
 
-        {/* "from" text */}
+        {/* "by" text */}
         <motion.span
           className="text-[hsl(var(--foreground))] opacity-70"
           whileHover={{ opacity: 1 }}
         >
-          from
+          by
         </motion.span>
 
         {/* "Not Alchemy" with hover effect */}

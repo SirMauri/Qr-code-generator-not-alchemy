@@ -42,7 +42,7 @@ export default function Home() {
           </h1>
 
           <p className="text-xs sm:text-sm text-[hsl(var(--foreground))] opacity-60 px-2">
-            made with love from{' '}
+            made with love by{' '}
             <a
               href="https://not-alchemy.com"
               target="_blank"
