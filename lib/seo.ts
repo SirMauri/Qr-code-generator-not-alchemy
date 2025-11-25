@@ -24,7 +24,7 @@ export function generateMetadata(params?: {
   } = params || {}
 
   const url = `${SITE_URL}${path}`
-  const ogImage = `${SITE_URL}/og-image.png`
+  const ogImage = `${SITE_URL}/logo.png`
 
   return {
     title,
@@ -130,7 +130,7 @@ export function generateWebApplicationSchema(locale = 'en') {
       'Instant download',
       'Free forever',
     ],
-    screenshot: `${SITE_URL}/og-image.png`,
+    screenshot: `${SITE_URL}/logo.png`,
     softwareVersion: '1.0',
     softwareHelp: {
       '@type': 'CreativeWork',
@@ -157,7 +157,7 @@ export function generateOrganizationSchema() {
     '@type': 'Organization',
     name: 'Free QR Code Generator',
     url: SITE_URL,
-    logo: `${SITE_URL}/icon-512.png`,
+    logo: `${SITE_URL}/logo.png`,
     description: 'Open-source, free QR code generator with no paywalls or limitations.',
     sameAs: [
       // TODO: Add social media links when available

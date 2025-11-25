@@ -47,6 +47,21 @@ export function CollaborationCredit() {
           by
         </motion.span>
 
+        {/* Not Alchemy logo with rotation on hover */}
+        <motion.div
+          whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center"
+        >
+          <Image
+            src="/logo.png"
+            alt="Not Alchemy"
+            width={20}
+            height={20}
+            className="inline-block"
+          />
+        </motion.div>
+
         {/* "Not Alchemy" with hover effect */}
         <motion.a
           href="https://www.not-alchemy.com"

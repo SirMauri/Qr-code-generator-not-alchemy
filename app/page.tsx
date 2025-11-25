@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { QRGenerator } from '@/components/QRGenerator';
 import { OliveBranch } from '@/components/OliveBranch';
 import { CollaborationCredit } from '@/components/CollaborationCredit';
@@ -37,6 +38,18 @@ export default function Home() {
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-12 relative z-10">
         {/* Header Section */}
         <AnimatedSection delay={0.1} className="max-w-3xl mx-auto text-center mb-6 sm:mb-8 md:mb-12 space-y-2.5 sm:space-y-3">
+          {/* Logo */}
+          <AnimatedSection delay={0.05} className="flex justify-center mb-4 sm:mb-5">
+            <Image
+              src="/logo.png"
+              alt="Free QR Code Generator"
+              width={100}
+              height={100}
+              priority
+              className="w-[70px] sm:w-[80px] md:w-[100px] h-auto"
+            />
+          </AnimatedSection>
+
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[hsl(var(--foreground))] leading-tight px-2">
             Free QR Code Generator
           </h1>
